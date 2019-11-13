@@ -23,7 +23,7 @@ automations.yaml
     entity_id: input_select.ledpanel_options
   action:
   - data_template:
-      text: "{{ states('input_select.ledpanel_options') }}"
+      animation: "{{ states('input_select.ledpanel_options') }}"
     service: shell_command.ledpanel
 
 - alias: Test Panel
@@ -35,6 +35,6 @@ automations.yaml
   - service: light.turn_on
     entity_id: light.led_panel
   - data_template:
-      text: 'heart'
+      animation: 'heart'
     service: shell_command.ledpanel
 ```
