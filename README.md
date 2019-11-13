@@ -1,5 +1,9 @@
 # WLED-Panel
 
+My panel is a LED strip RGB with 300 led. The matrix is 15 pixel (h) x 20 pixel (w). 
+
+![all](led.png)
+
 ## Installation instructions
 
 configuration.yaml
