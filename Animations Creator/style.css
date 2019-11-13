@@ -1,0 +1,46 @@
+#canvas {
+    background-size: 100%;
+    border: 5px solid black;
+}
+.canvasSavedClass{
+  background-size: 100%;
+  border: 10px solid white;
+}
+.canvasSavedClassSelected{
+    border: 10px solid #d6cccc;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 75%;
+}
+
+.right {
+    width: 25%;
+}
+#textarea{
+  width: 320px
+}
+.swatch {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: 1px solid hsla(0, 0%, 0%, 1);
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.button_color {
+    display: inline-block;
+    width: 70px;
+    margin-bottom: 10px;
+}
+.swatch-bg{
+  text-align: center;
+  font-family: sans-serif;
+  vertical-align: middle;
+  line-height: 70px;
+  font-size: 20px;
+}

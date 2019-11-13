@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<meta charset="utf-8">
+	<title>Animation Maker</title>
+   <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/huebee.min.css">
+  <script src="js/huebee.pkgd.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body onload="init()" style="overflow-y: scroll;">
+  <div class="row">
+    <div class="col-2 pre-scrollable" id="collection">
+    </div>
+    <div class="col-7"  style="margin-top:20px" id="drawcontainer" >
+      <div class="row justify-content-center" id="displaysetting">
+          <div class="col-3">
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" >Pixel X</span>
+              </div>
+              <input type="text" class="form-control" id="pixelxinput" value="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Pixel Y</span>
+              </div>
+              <input type="text" class="form-control"  id="pixelyinput" value="15" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+            </div>
+          </div>
+          <div class="col-3">
+            <button type="button" onclick="setDrawing()" class="btn btn-success">Set</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="drawsubcontainer" style="text-align: center;">
+            <canvas id="canvas" style="display:none">
+              Canvas not supported
+            </canvas>
+          </div>
+        </div>
+    </div>
+    <div class="col-3"  style="margin-top:20px">
+      <div class="row">
+        <div class="col-3">
+          <span class="swatch set-bg-elem" style="margin-right: 10px"></span>
+          <span class="swatch swatch-bg" id="bq_span" style="background-color: #000000;margin-right: 10px; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff,-1px 1px 0 #fff, 1px 1px 0 #fff;">BG</span>
+          <input type="button" onclick="setbqcolor();" id="button_change_bq" class="button_color btn btn-outline-dark btn-sm" value="SET BQ"/>
+          <input type="button" onclick="resetdraw();" id="reset" class="button_color btn btn-outline-dark btn-sm" value="RESET"/>
+        </div>
+        <div class="col-9" style="padding:0">
+          <input id="color-picker" onchange="changeColor();" class="color-input" value="#FFFFFF" style="display: none;" data-huebee />
+        </div>
+      </div>
+      <div class="row" style="margin-top: 10px;">
+        <div class="col-5">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" >Speed</span>
+            </div>
+            <input type="text" class="form-control" id="speedinput" value="0.5" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Loop</span>
+            </div>
+            <input type="text" class="form-control"  id="loopinput" value="3" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:20px;display:none" id="savecontainer">
+        <div class="col" style="text-align: center">
+          <input type="button" id="save" class="btn btn-primary" onclick="addNewFrame();" value="New Frame"/>
+        </div>
+      </div>
+      <div class="row" style="margin-top:20px;display:none" id="saveanimation">
+        <div class="col" style="text-align: center">
+          <input type="button" class="btn btn-primary" onclick="printAnimation();" value="Export Animation"/>
+        </div>
+      </div>
+      <div class="row" style="margin-top:20px;display:none" id="importanimation">
+        <div class="col" style="text-align: center">
+          <input type="button" class="btn btn-primary" onclick="importAnimation();" value="Import Animation"/>
+        </div>
+      </div>
+      <div class="row" style="margin-top:20px">
+        <textarea id="textarea" style="margin-left:10px;display:none" rows="10"></textarea>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
